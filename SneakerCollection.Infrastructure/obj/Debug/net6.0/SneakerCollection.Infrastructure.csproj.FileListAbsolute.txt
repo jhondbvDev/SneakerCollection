@@ -1,0 +1,17 @@
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\bin\Debug\net6.0\SneakerCollection.Infrastructure.deps.json
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\bin\Debug\net6.0\SneakerCollection.Infrastructure.dll
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\bin\Debug\net6.0\SneakerCollection.Infrastructure.pdb
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\bin\Debug\net6.0\SneakerCollection.Application.dll
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\bin\Debug\net6.0\SneakerCollection.Domain.dll
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\bin\Debug\net6.0\SneakerCollection.Application.pdb
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\bin\Debug\net6.0\SneakerCollection.Domain.pdb
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.csproj.AssemblyReference.cache
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.AssemblyInfoInputs.cache
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.AssemblyInfo.cs
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.csproj.CopyComplete
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.dll
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\refint\SneakerCollection.Infrastructure.dll
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\SneakerCollection.Infrastructure.pdb
+D:\Desarrollo\Proyectos\SneakerCollection\SneakerCollection.Infrastructure\obj\Debug\net6.0\ref\SneakerCollection.Infrastructure.dll
