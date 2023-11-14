@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SneakerCollection.Application\SneakerCollection.Application.csproj" />
+    <ProjectReference Include="..\SneakerCollection.Infrastructure\SneakerCollection.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RD/J+seow0Qot98/G2POvXsNOIikykhV72MDO/DqsvkcAqHMIpC/mGWo2R8oEaxFg4C1P+61xmz+Lh0P3wlHCw==",
+  "dgSpecHash": "epYbQaUE/yVqp7KCQwD5HT1m7mcHtYphSBLQPNjESqq0fsj6PYHv5BT/m5o7BxMGNqz4wWkV0OBhnCNXK9xNUg==",
   "success": true,
   "projectFilePath": "D:\\Desarrollo\\Proyectos\\SneakerCollection\\SneakerCollection.Application\\SneakerCollection.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\jhond\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
