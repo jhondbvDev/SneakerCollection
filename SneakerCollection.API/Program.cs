@@ -1,3 +1,4 @@
+using SneakerCollection.API.Middleware;
 using SneakerCollection.Application;
 using SneakerCollection.Application.Services.Authentication;
 using SneakerCollection.Infrastructure;
@@ -24,6 +25,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 

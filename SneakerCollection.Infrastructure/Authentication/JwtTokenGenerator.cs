@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using SneakerCollection.Application.Common.Interfaces.Authentication;
 using SneakerCollection.Application.Common.Interfaces.Services;
+using SneakerCollection.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -22,7 +23,7 @@ namespace SneakerCollection.Infrastructure.Authentication
             _dateTimeProvider = dateTimeProvider;
             _jwtSettings = jwtOptions.Value;
         }
-        public string GenerateToken(Guid userId, string email, string password)
+        public string GenerateToken(User user)
         {
             var signingCredentials = new SigningCredentials(
                 new SymmetricSecurityKey(
@@ -30,8 +31,8 @@ namespace SneakerCollection.Infrastructure.Authentication
                 SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub,userId.ToString()),
-                new Claim(JwtRegisteredClaimNames.GivenName,email),
+                new Claim(JwtRegisteredClaimNames.Sub,user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.GivenName,user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
 
             };

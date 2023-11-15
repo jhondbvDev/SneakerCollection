@@ -1,5 +1,6 @@
 ﻿using SneakerCollection.Application.Common.Interfaces.Authentication;
 using SneakerCollection.Application.Common.Interfaces.Persistence;
+using SneakerCollection.Application.Common.Interfaces.Services;
 using SneakerCollection.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,15 @@ namespace SneakerCollection.Application.Services.Authentication
     {
         private readonly IJwtTokenGenerator _jwtTokenGenerator;
         private readonly IUserRepository _userRepository;
+        private readonly IPasswordHasher _passwordHasher;
 
         public AuthenticationService(IJwtTokenGenerator jwtTokenGenerator,
-            IUserRepository userRepository)
+            IUserRepository userRepository,
+            IPasswordHasher passwordHasher)
         {
             _userRepository = userRepository;
             _jwtTokenGenerator = jwtTokenGenerator;
+            _passwordHasher = passwordHasher;
         }
         public AuthenticationResult Login(string email, string password)
         {
@@ -27,16 +31,14 @@ namespace SneakerCollection.Application.Services.Authentication
                 throw new Exception("User or password is incorrect");
             }
 
-            if(user.Password != password) { 
+            if(!_passwordHasher.VerifyPassword(password,user.Password)) { 
                 throw new Exception("User or password is incorrect");
-
             }
 
-            var token = _jwtTokenGenerator.GenerateToken(user.Id, user.Email, user.Password);
+            var token = _jwtTokenGenerator.GenerateToken(user);
 
             return new AuthenticationResult(
-                user.Id,
-                email,
+                user,
                 token
                 );
         }
@@ -49,14 +51,13 @@ namespace SneakerCollection.Application.Services.Authentication
                 throw new Exception("User with given email already exists.");
             }
             //create user
-            var user = new User { Email = email, Password = password };
+            var user = new User { Email = email, Password = _passwordHasher.Hash(password) };
             _userRepository.Add(user);
-            //create JWT 
+            //create JWT    
 
-            var token = _jwtTokenGenerator.GenerateToken(user.Id, email, password);
+            var token = _jwtTokenGenerator.GenerateToken(user);
             return new AuthenticationResult(
-               user.Id,
-                email,
+               user,
                 token
                 );
         }

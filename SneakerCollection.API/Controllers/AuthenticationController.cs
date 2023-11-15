@@ -20,7 +20,7 @@ namespace SneakerCollection.API.Controllers
         public IActionResult Register(RegisterRequest request)
         {
             var authResult = _authenticationService.Register(request.Email, request.Password);
-            var response = new AuthenticationResponse(authResult.Id, authResult.Email, authResult.Token);
+            var response = new AuthenticationResponse(authResult.user.Id, authResult.user.Email, authResult.Token);
             return Ok(response);
         }
 
@@ -28,7 +28,7 @@ namespace SneakerCollection.API.Controllers
         public IActionResult Login(LoginRequest request)
         {
             var authResult = _authenticationService.Login(request.Email, request.Password);
-            var response = new AuthenticationResponse(authResult.Id, authResult.Email, authResult.Token);
+            var response = new AuthenticationResponse(authResult.user.Id, authResult.user.Email, authResult.Token);
             return Ok(response);
         }
     }

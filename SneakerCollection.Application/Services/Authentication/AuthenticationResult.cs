@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SneakerCollection.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,6 @@ namespace SneakerCollection.Application.Services.Authentication
 {
     public record AuthenticationResult
     (
-     Guid Id,
-     string Email,
+     User user,
      string Token);
 }

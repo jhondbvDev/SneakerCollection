@@ -23,6 +23,7 @@ namespace SneakerCollection.Infrastructure
             services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));
             services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
             services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
+            services.AddSingleton<IPasswordHasher, PasswordHasher>();
 
             services.AddScoped<IUserRepository, UserRepository>();
             return services;
