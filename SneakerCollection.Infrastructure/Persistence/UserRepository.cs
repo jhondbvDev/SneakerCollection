@@ -1,5 +1,5 @@
 ﻿using SneakerCollection.Application.Common.Interfaces.Persistence;
-using SneakerCollection.Domain.Entities;
+using SneakerCollection.Domain.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;

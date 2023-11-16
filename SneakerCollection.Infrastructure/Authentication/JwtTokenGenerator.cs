@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using SneakerCollection.Application.Common.Interfaces.Authentication;
 using SneakerCollection.Application.Common.Interfaces.Services;
-using SneakerCollection.Domain.Entities;
+using SneakerCollection.Domain.User;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
