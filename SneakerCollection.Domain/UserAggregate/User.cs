@@ -11,7 +11,11 @@ namespace SneakerCollection.Domain.User
 
         private readonly List<Sneaker> _sneakers = new();
 
-        public IReadOnlyList<Sneaker> sneakers => _sneakers.AsReadOnly();
+        public IReadOnlyList<Sneaker> Sneakers => _sneakers.ToList();
+
+#pragma warning disable CS8618
+        protected User() { }
+#pragma warning restore CS8618
 
         private User(UserId userId,
             string? email,

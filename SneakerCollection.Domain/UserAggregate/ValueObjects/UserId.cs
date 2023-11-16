@@ -16,6 +16,11 @@ namespace SneakerCollection.Domain.UserAggregate.ValueObjects
             Value = value;
         }
 
+        public static UserId Create(Guid Id)
+        {
+            return new UserId(Id);
+        }
+
         public static UserId CreateUnique()
         {
             return new(Guid.NewGuid());

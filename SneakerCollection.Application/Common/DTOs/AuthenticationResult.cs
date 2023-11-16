@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SneakerCollection.Application.Services.Authentication
+namespace SneakerCollection.Application.Common.DTOs
 {
     public record AuthenticationResult
     (

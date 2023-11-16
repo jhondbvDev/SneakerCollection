@@ -1,4 +1,5 @@
-﻿using SneakerCollection.Application.Common.Interfaces.Authentication;
+﻿using SneakerCollection.Application.Common.DTOs;
+using SneakerCollection.Application.Common.Interfaces.Authentication;
 using SneakerCollection.Application.Common.Interfaces.Persistence;
 using SneakerCollection.Application.Common.Interfaces.Services;
 using SneakerCollection.Domain.User;
@@ -51,7 +52,7 @@ namespace SneakerCollection.Application.Services.Authentication
                 throw new Exception("User with given email already exists.");
             }
             //create user
-            var user = User.Create(email, password);
+            var user = User.Create(email, _passwordHasher.Hash(password));
             //var user = new User { Email = email, Password = _passwordHasher.Hash(password) };
             _userRepository.Add(user);
             //create JWT    

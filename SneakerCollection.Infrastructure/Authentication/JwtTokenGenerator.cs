@@ -31,7 +31,7 @@ namespace SneakerCollection.Infrastructure.Authentication
                 SecurityAlgorithms.HmacSha256);
             var claims = new[]
             {
-                new Claim(JwtRegisteredClaimNames.Sub,user.Id.ToString()),
+                new Claim("uid",user.Id.Value.ToString()),
                 new Claim(JwtRegisteredClaimNames.GivenName,user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
 
