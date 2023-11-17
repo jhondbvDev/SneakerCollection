@@ -23,9 +23,14 @@ public class SneakerRepository : ISneakerRepository
         await _dbContext.SaveChangesAsync();
     }
 
-    public async Task<bool> Delete(SneakerId sneakerId)
+    public async Task<bool> Delete(SneakerId sneakerId,UserId userId)
     {
-        var sneaker = _dbContext.Sneakers.SingleOrDefault(x => x.Id.Equals(sneakerId));
+        var user = await _dbContext.Users.FirstOrDefaultAsync(x => x.Id.Value == userId.Value);
+        if (user == null)
+        {
+            throw new Exception("An Error ocurred while deleting the sneaker");
+        }
+        var sneaker = user.Sneakers.SingleOrDefault(x => x.Id.Equals(sneakerId));
         int record = 0;
         if(sneaker != null)
         {

@@ -14,7 +14,7 @@ namespace SneakerCollection.Application.Services.Sneaker
     {
         Task<SneakerCollectionResponse> GetSneakerByUserId(UserId userId);
         Task AddSneaker(SneakerCollection.Domain.UserAggregate.Entities.Sneaker sneaker);
-        Task<bool> RemoveSneaker(SneakerId sneakerId);
+        Task<bool> RemoveSneaker(SneakerId sneakerId, UserId userId);
         Task UpdateSneaker(SneakerCollection.Domain.UserAggregate.Entities.Sneaker sneaker);
 
         Task<SneakerCollection.Domain.UserAggregate.Entities.Sneaker> GetSneakerById(SneakerId sneakerId,UserId userId);

@@ -106,13 +106,14 @@ namespace SneakerCollection.Test.Application.Services.Sneaker
         public async Task RemoveSneaker_ShouldReturnSuccess_WhenDeleteAnExistingSneaker()
         {
             //Given
-            var sneakerId = SneakerId.Create(Guid.NewGuid());
+            var sneakerId = SneakerId.CreateUnique();
+            var userId = UserId.CreateUnique();
 
             //When
-            _sneakerRepository.Setup(x => x.Delete(It.IsAny<SneakerId>())).ReturnsAsync(true);
+            _sneakerRepository.Setup(x => x.Delete(It.IsAny<SneakerId>(),It.IsAny<UserId>())).ReturnsAsync(true);
 
             //Then
-            var response =  await _sneakerService.RemoveSneaker(sneakerId);
+            var response =  await _sneakerService.RemoveSneaker(sneakerId, userId   );
             Assert.True(response);
         }
     }

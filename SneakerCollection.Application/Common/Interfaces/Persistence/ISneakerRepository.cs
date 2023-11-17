@@ -13,7 +13,7 @@ namespace SneakerCollection.Application.Common.Interfaces.Persistence
     {
         public Task Add(Sneaker sneaker);
         public Task Update(Sneaker sneaker);
-        public Task<bool> Delete(SneakerId sneakerId);
+        public Task<bool> Delete(SneakerId sneakerId,UserId userId);
         public Task<IEnumerable<Sneaker>> GetSneakerByUserId(UserId userId);
         public Task<Sneaker> GetSneakerById(SneakerId id,UserId userId);
 

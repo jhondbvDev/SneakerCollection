@@ -53,9 +53,9 @@ namespace SneakerCollection.Application.Services.Sneaker
             return response;
         }
 
-        public async Task<bool> RemoveSneaker(SneakerId sneakerId)
+        public async Task<bool> RemoveSneaker(SneakerId sneakerId,UserId userId)
         {
-           return await _sneakerRepository.Delete(sneakerId);
+           return await _sneakerRepository.Delete(sneakerId,userId);
         }
 
         public async Task UpdateSneaker(Domain.UserAggregate.Entities.Sneaker sneaker)

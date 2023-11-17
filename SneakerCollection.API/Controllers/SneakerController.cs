@@ -45,20 +45,20 @@ namespace SneakerCollection.API.Controllers
             }
             var guid = Guid.Parse(loggedUserId);
             var snkId = Guid.Parse(sneakerId);
-            var response = await _sneakerService.GetSneakerById(SneakerId.Create(snkId),UserId.Create(guid));
+            var response = await _sneakerService.GetSneakerById(SneakerId.Create(snkId), UserId.Create(guid));
             return Ok(response);
         }
 
         [HttpPost]
         public async Task<IActionResult> CreateSneaker(CreateSneakerRequest request)
         {
-            var loggedUserId =  User.FindFirst("uid").Value;
+            var loggedUserId = User.FindFirst("uid").Value;
             if (loggedUserId == null)
             {
                 return BadRequest("There is no user actually logged into the server, please try again");
             }
             var userId = UserId.Create(Guid.Parse(loggedUserId));
-            var sneaker = Sneaker.Create(request.Name, request.Brand, request.Price, request.Size, request.Year, request.Rate,userId);
+            var sneaker = Sneaker.Create(request.Name, request.Brand, request.Price, request.Size, request.Year, request.Rate, userId);
             await _sneakerService.AddSneaker(sneaker);
             return Ok(sneaker);
 
@@ -74,7 +74,7 @@ namespace SneakerCollection.API.Controllers
             }
             var sneakerId = SneakerId.Create(Guid.Parse(request.SneakerId));
             var userId = UserId.Create(Guid.Parse(loggedUserId));
-            var sneaker = await _sneakerService.GetSneakerById(sneakerId,userId);
+            var sneaker = await _sneakerService.GetSneakerById(sneakerId, userId);
             if (sneaker == null)
             {
                 return Problem("Occured an error while updating the sneaker");
@@ -102,6 +102,20 @@ namespace SneakerCollection.API.Controllers
 
             return Ok(sneaker);
 
+        }
+
+        [HttpDelete("{sneakerId}")]
+        public async Task<IActionResult> RemoveSneaker(string sneakerId)
+        {
+            var loggedUserId = User.FindFirst("uid").Value;
+            if (loggedUserId == null)
+            {
+                return BadRequest("There is no user actually logged into the server, please try again");
+            }
+            var userId = UserId.Create(Guid.Parse(loggedUserId));
+            var sneaker_id = SneakerId.Create(Guid.Parse(sneakerId));
+            var response = await _sneakerService.RemoveSneaker(sneaker_id, userId);
+            return Ok(response);
         }
     }
 }
