@@ -16,6 +16,9 @@ The project supports OpenAPI specification so the user would be able to access t
 * DTOs
 * Repository Pattern
 * Services
+* JWT
+* Unit Test 
+* Moq
 
 ## Steps to run the project
 
